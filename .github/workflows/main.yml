@@ -5,6 +5,7 @@ on:
     branches:
       - v1.10.7
     tags:
+      - v1.10.7
 
 env:
   CONTAINER_RUN_OPTIONS: " "
