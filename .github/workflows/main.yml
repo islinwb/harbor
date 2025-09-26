@@ -1,0 +1,24 @@
+name: ARM64 CI WorkFlow
+
+on:
+  push:
+    branches:
+      - v1.10.7
+    tags:
+      - v1.10.7
+
+env:
+  CONTAINER_RUN_OPTIONS: " "
+  GINKGO_VERSION: "v2.17.1"
+
+jobs:
+  build-all:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: build
+        run: |
+          make build
